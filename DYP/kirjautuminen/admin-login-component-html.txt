@@ -1,0 +1,23 @@
+<mat-card>
+  <form #loginForm="ngForm" (ngSubmit)="loginClick(loginForm)">
+    <div class="formContainer">
+    <mat-form-field>
+      <label>
+        <input matInput [(ngModel)]="username"
+               name="username"
+               placeholder="Username">
+      </label>
+    </mat-form-field>
+    <mat-form-field>
+      <label>
+        <input matInput [(ngModel)]="password"
+               name="password"
+               placeholder="Password"
+               type="password">
+      </label>
+    </mat-form-field>
+    </div>
+  </form>
+  <button mat-button (click)="loginClick(loginForm)">Login</button>
+  <button mat-button (click)="backHomeClick()">Cancel</button>
+</mat-card>

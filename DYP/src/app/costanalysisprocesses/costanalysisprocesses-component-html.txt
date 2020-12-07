@@ -1,0 +1,1070 @@
+<app-cost-analysis-buttons></app-cost-analysis-buttons>
+
+<mat-card class="processesCard">
+  <table>
+    <tr>
+      <th>
+        <p>
+          Punching
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="punching"></mat-slide-toggle>
+      </td>
+       </tr>
+
+    <tr>
+      <th>
+        <p>
+          Laser-cutting
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="laserCutting"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Fiber-laser
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="fiberLaser"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Bending
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="bending"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Bending 2
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="bending2"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Threading
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="threading"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Insertion
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="insertion"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          De-burring
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="deBurring"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Manual welding
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="manualWelding"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Robotic welding
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="roboticWelding"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Spot welding
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="spotWelding"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Grinding
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="grinding"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Masking
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="masking"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Painting
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="processesToggle" [(ngModel)]="painting"></mat-slide-toggle>
+      </td>
+  </table>
+
+  <button mat-raised-button [routerLink]="['/costanalysisothercosts']">Next</button>
+  <button class="processesBackButton" mat-raised-button [routerLink]="['/costanalysis']">Back</button>
+  <button class="processesCancelButton" mat-raised-button><mat-icon mat-list-icon>clear</mat-icon></button>
+
+  <div *ngIf="punching || laserCutting || fiberLaser || bending || bending2 || threading || insertion || deBurring || manualWelding ||
+  roboticWelding || spotWelding || grinding || masking || painting">
+    <mat-card id="optionCardProcesses">
+
+      <table id="processesTable">
+        <tr style="font-weight: bold">
+          <td></td>
+
+          <td>
+            Process time
+          </td>
+
+          <td>
+            Process cost
+          </td>
+
+          <td>
+            Setup time
+          </td>
+
+          <td>
+            Setup cost
+          </td>
+
+          <td>
+            Total cost
+          </td>
+        </tr>
+
+        <!--When punching toggle is on a user can insert the punching time..-->
+
+        <tr *ngIf="punching">
+          <td>
+            <p>
+              Punching
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost/h">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost/h">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+                <!-- ((3600 * process time + process cost) + (3600 * set up time + set up cost)) / lot size -->
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the punching time stops here.-->
+
+        <!--When laser-cutting toggle is on a user can insert the laser-cutting time.-->
+        <tr *ngIf="laserCutting">
+          <td>
+            <p>
+              Laser-cutting
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the laser-cutting time stops here.-->
+
+        <!--When fiber-laser toggle is on a user can insert the fiber-laser time.-->
+        <tr *ngIf="fiberLaser">
+          <td>
+            <p>
+              Fiber-laser
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the fiber-laser time stops here.-->
+
+        <!--When bending toggle is on a user can insert the bending time.-->
+        <tr *ngIf="bending">
+          <td>
+            <p>
+              Bending
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the bending time stops here.-->
+
+        <!--When bending 2 toggle is on a user can insert the bending 2 time.-->
+        <tr *ngIf="bending2">
+          <td>
+            <p>
+              Bending 2
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the bending 2 time stops here.-->
+
+        <!--When threading toggle is on a user can insert the threading time.-->
+        <tr *ngIf="threading">
+          <td>
+            <p>
+              Threading
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+          <!--Function for inserting the threading time stops here.-->
+
+          <!--When insertion toggle is on a user can insert the insertion time.-->
+        <tr *ngIf="insertion">
+          <td>
+            <p>
+              Insertion
+            </p>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the insertion time stops here.-->
+
+        <!--When de-burring toggle is on a user can insert the de-burring time.-->
+        <tr *ngIf="deBurring">
+          <td>
+            <p>
+              De-burring
+            </p>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the de-burring time stops here.-->
+
+        <!--When manual welding toggle is on a user can insert the manual welding time.-->
+        <tr *ngIf="manualWelding">
+          <td>
+            <p>
+              Manual welding
+            </p>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the manual welding time stops here.-->
+
+        <!--When robotic welding toggle is on a user can insert the robotic welding time.-->
+        <tr *ngIf="roboticWelding">
+          <td>
+            <p>
+              Robotic welding
+            </p>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the robotic welding time stops here.-->
+
+        <!--When spot welding toggle is on a user can insert the spot welding time.-->
+        <tr *ngIf="spotWelding">
+          <td>
+            <p>
+              Spot welding
+            </p>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the spot welding time stops here.-->
+
+        <!--When grinding toggle is on a user can insert the grinding time.-->
+        <tr *ngIf="grinding">
+          <td>
+            <p>
+              Grinding
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the grinding time stops here.-->
+
+        <!--When masking toggle is on a user can insert the masking time.-->
+        <tr *ngIf="masking">
+          <td>
+            <p>
+              Masking
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Seconds">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Value">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the masking time stops here.-->
+
+        <!--When painting toggle is on a user can insert the painting time.-->
+        <tr *ngIf="painting">
+          <td>
+            <p>
+              Painting
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Time">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Setup">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Total">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the painting time stops here.-->
+
+        <!--When painting toggle is on a user can insert the information about the painting material.-->
+        <tr *ngIf="painting">
+          <td></td> <!--Moves text and input field right-->
+          <td>
+            <p>
+              Material
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Material">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the information about the painting material stops here.-->
+
+        <!--When painting toggle is on a user can insert the information about the painting width.-->
+        <tr *ngIf="painting">
+          <td></td> <!--Moves text and input field right-->
+          <td>
+            <p>
+              Width
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Width">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the information about the painting width stops here.-->
+
+        <!--When painting toggle is on a user can insert the information about the painting vertically.-->
+        <tr *ngIf="painting">
+          <td></td> <!--Moves text and input field right-->
+          <td>
+            <p>
+              Vertically
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Vertically">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the information about the painting vertically stops here.-->
+
+        <!--When painting toggle is on a user can insert the information about the painting sides.-->
+        <tr *ngIf="painting">
+          <td></td> <!--Moves text and input field right-->
+          <td>
+            <p>
+              Sides
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Sides">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the information about the painting sides stops here.-->
+
+        <!--When painting toggle is on a user can insert the information about the painting material cost.-->
+        <tr *ngIf="painting">
+          <td></td> <!--Moves text and input field right-->
+          <td>
+            <p>
+              Material cost
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="€/Kg">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the information about the painting material cost stops here.-->
+
+        <!--When painting toggle is on a user can insert the information about the painting mark up.-->
+        <tr *ngIf="painting">
+        <td></td> <!--Moves text and input field right-->
+        <td>
+          <p class="paintingInfoRightSideTitle">
+            Mark up
+          </p>
+        </td>
+
+        <td>
+          <mat-form-field class="paintingInfoRightSideInsert">
+            <label>
+              <input matInput placeholder="%">
+            </label>
+          </mat-form-field>
+        </td>
+        </tr>
+        <!--Function for inserting the information about the painting mark up stops here.-->
+
+        <!--When painting toggle is on a user can insert the information about the paint loss.-->
+        <tr *ngIf="painting">
+          <td></td> <!--Moves text and input field right-->
+          <td>
+            <p>
+              Paint loss
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="%">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the information about the paint loss stops here.-->
+
+        <!--When painting toggle is on a user can insert the information about the painting speed.-->
+        <tr *ngIf="painting">
+          <td></td> <!--Moves text and input field right-->
+          <td>
+            <p>
+              Speed
+            </p>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="S">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the information about the painting speed stops here.-->
+
+        <!--When painting toggle is on a user can insert the information about the M^2/Kg.-->
+        <tr *ngIf="painting">
+          <td></td><td></td> <!--Moves text and input field right-->
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="m^2/Kg">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <!--Function for inserting the information about the M^2/Kg stops here.-->
+      </table>
+    </mat-card>
+  </div>
+</mat-card>

@@ -1,0 +1,4 @@
+<mat-card>
+  <mat-card-title>You have signed in as {{username$ | async}}</mat-card-title>
+  <button mat-raised-button (click)="signOut()">Sign out</button>
+</mat-card>

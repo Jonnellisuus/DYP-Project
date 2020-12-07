@@ -1,0 +1,351 @@
+<app-cost-analysis-buttons></app-cost-analysis-buttons>
+
+<mat-card class="otherCostsCard">
+  <table class="partDetailTable">
+    <tr>
+      <th>
+        <p>
+          Plating
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="otherCostsToggle" [(ngModel)]="plating"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Purchase parts
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="otherCostsToggle" [(ngModel)]="purchaseParts"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Packaging
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="otherCostsToggle" [(ngModel)]="packing"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Freight
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="otherCostsToggle" [(ngModel)]="freight"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Customs duty
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="otherCostsToggle" [(ngModel)]="customDuties"></mat-slide-toggle>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <p>
+          Other costs
+        </p>
+      </th>
+
+      <td>
+        <mat-slide-toggle class="otherCostsToggle" [(ngModel)]="otherCosts"></mat-slide-toggle>
+      </td>
+    </tr>
+  </table>
+
+  <button mat-raised-button [routerLink]="['/costanalysisoverview']">Next</button>
+  <button class="otherCostBackButton" mat-raised-button [routerLink]="['/costanalysisprocesses']">Back</button>
+  <button class="otherCostCancelButton" mat-raised-button><mat-icon mat-list-icon>clear</mat-icon></button>
+
+  <div *ngIf="plating || purchaseParts || packing || freight || customDuties || otherCosts">
+    <mat-card id="optionCardOtherCosts">
+      <!--When plating toggle is on a user can insert the plating material.-->
+      <table id="otherCostsTable">
+        <tr *ngIf="plating">
+          <th>
+            <p>
+              Plating
+            </p>
+          </th>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Plating material">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Plating cost">
+              </label>
+            </mat-form-field>
+          </td>
+         </tr>
+      <!--Function for inserting the plating material stops here..-->
+
+      <!--When purchase parts toggle is on a user can insert the part.-->
+        <tr *ngIf="purchaseParts">
+          <th>
+            <p>
+              Purchase part 1
+            </p>
+          </th>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Part name">
+              </label>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Number of parts">
+              </label>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost per part">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr *ngIf="purchaseParts">
+          <th>
+            <p>
+              Purchase part 2
+            </p>
+          </th>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Part name">
+              </label>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Number of parts">
+              </label>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost per part">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr *ngIf="purchaseParts">
+          <th>
+            <p>
+              Purchase part 3
+            </p>
+          </th>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Part name">
+              </label>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Number of parts">
+              </label>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost per part">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+      <!--Function for inserting the part stops here.-->
+
+      <!--When packing toggle is on a user can insert the packing material.-->
+        <tr *ngIf="packing">
+          <th>
+            <p>
+              Packaging
+            </p>
+          </th>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Packaging cost">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field class="dropdownQuotationEstimation">
+              <mat-label>Currency / %</mat-label>
+              <mat-select>
+                <mat-option value="quotation">Currency</mat-option>
+                <mat-option value="estimation">%</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+      <!--Function for inserting the packing material stops here.-->
+
+      <!--When freight toggle is on a user can insert the freight information.-->
+        <tr *ngIf="freight">
+          <th>
+            <p>
+              Freight
+            </p>
+          </th>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Freight cost">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field class="dropdownQuotationEstimation">
+              <mat-label>Currency / %</mat-label>
+              <mat-select>
+                <mat-option value="quotation">Currency</mat-option>
+                <mat-option value="estimation">%</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+      <!--Function for inserting the freight information stops here.-->
+
+      <!--When customs duties toggle is on a user can insert customs duties information.-->
+        <tr *ngIf="customDuties">
+          <th>
+            <p>
+              Customs duty
+            </p>
+          </th>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Customs duty %">
+              </label>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field class="dropdownQuotationEstimation">
+              <mat-label>Currency / %</mat-label>
+              <mat-select>
+                <mat-option value="quotation">Currency</mat-option>
+                <mat-option value="estimation">%</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <!--When other costs toggle is on a user can insert other cost information.-->
+        <tr *ngIf="otherCosts">
+          <th>
+            <p>
+              Other cost 1
+            </p>
+          </th>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Other value">
+              </label>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr *ngIf="otherCosts">
+          <th>
+            <p>
+              Other cost 2
+            </p>
+          </th>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Other value">
+              </label>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+
+        <tr *ngIf="otherCosts">
+          <th>
+            <p>
+              Other cost 3
+            </p>
+          </th>
+
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Other value">
+              </label>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <label>
+                <input matInput placeholder="Cost">
+              </label>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <!--Function for other costs stops here.-->
+
+    </mat-card>
+  </div>
+</mat-card>

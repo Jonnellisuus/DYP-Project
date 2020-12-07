@@ -1,0 +1,96 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+// firebase & angularfire & authentication imports
+import { environment } from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+
+
+import {
+  _MatMenuDirectivesModule,
+  MatButtonModule, MatButtonToggleModule, MatCardModule, MatDialogModule,
+  MatDividerModule, MatExpansionModule, MatFormFieldModule,
+  MatIconModule, MatInputModule,
+  MatListModule, MatMenuModule, MatSelectModule,
+  MatSidenavModule, MatSlideToggleModule, MatTableModule,
+  MatToolbarModule
+} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CostAnalysisButtonsComponent } from './cost-analysis-buttons/cost-analysis-buttons.component';
+import { BackgroundComponent } from './background/background.component';
+import { CostanalysisComponent } from './costanalysis/costanalysis.component';
+import { PartsComponent } from './parts/parts.component';
+import { ProductsComponent } from './products/products.component';
+import { ReportsComponent } from './reports/reports.component';
+import { RfqComponent } from './rfq/rfq.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { CostanalysisprocessesComponent } from './costanalysisprocesses/costanalysisprocesses.component';
+import {RouterModule} from '@angular/router';
+import { CostanalysisothercostsComponent } from './costanalysisothercosts/costanalysisothercosts.component';
+import { CostanalysisoverviewComponent } from './costanalysisoverview/costanalysisoverview.component';
+import {FormsModule} from '@angular/forms';
+import { UseragreementComponent } from './useragreement/useragreement.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ToolbarComponent,
+    CostAnalysisButtonsComponent,
+    BackgroundComponent,
+    CostanalysisComponent,
+    PartsComponent,
+    ProductsComponent,
+    ReportsComponent,
+    RfqComponent,
+    AdminComponent,
+    LoginComponent,
+    HomeComponent,
+    CostanalysisprocessesComponent,
+    CostanalysisothercostsComponent,
+    CostanalysisoverviewComponent,
+    UseragreementComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatDividerModule,
+    MatListModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonToggleModule,
+    MatSlideToggleModule,
+    RouterModule,
+    FormsModule,
+    MatExpansionModule,
+    MatTableModule,
+    _MatMenuDirectivesModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatExpansionModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    UseragreementComponent,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}

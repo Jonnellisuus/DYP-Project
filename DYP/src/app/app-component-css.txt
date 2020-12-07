@@ -1,0 +1,44 @@
+.app-sidenav-container {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.iconProducts {
+  color: lightgrey;
+}
+
+.iconReports {
+  color: lightgrey;
+}
+
+.iconRFQ {
+  color: lightgrey;
+}
+
+img {
+  padding-left: 6.5%;
+  padding-bottom: 5%;
+  width: 88%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+}
+
+.app-sidenav {
+  width: 250px;
+}
+
+.app-sidenav-user-area {
+  background: #616161;
+  height: 24.5px;
+}
+
+.app-user-name {
+  font: caption;
+  font-size: small;
+  color: white;
+  text-align: center;
+  background: #616161;
+}

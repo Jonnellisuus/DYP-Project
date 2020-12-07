@@ -1,0 +1,91 @@
+.processesCard {
+  top: 8%;
+  position: absolute;
+  left: 2%;
+  margin: 2%;
+  height: 80%;
+  width: 90%;
+  overflow: auto;
+  text-align: left;
+}
+
+button{
+  position: fixed;
+  color: white;
+  background: #7E7E7E;
+  left: 90%;
+  top: 88%;
+  float: bottom;
+}
+
+.processesBackButton {
+  position: fixed;
+  color: white;
+  background: #7E7E7E;
+  left: 82%;
+  top: 88%;
+  float: bottom;
+}
+
+.processesCancelButton {
+  position: fixed;
+  background: #d90300;
+  left: 90%;
+  top: 15%;
+  float: top;
+}
+
+.processesToggle {
+  position: relative;
+  left: 100%;
+}
+
+mat-form-field {
+  width: 70%;
+  text-align: center;
+}
+
+/deep/ mat-slide-toggle.mat-checked:not(.mat-disable) .mat-slide-toggle-bar {
+  background: #5091d7
+}
+
+/deep/ mat-slide-toggle.mat-checked:not(.mat-disable) .mat-slide-toggle-thumb {
+  background: #D7D7D7;
+}
+
+td {
+  text-align: center;
+}
+
+::ng-deep td div.mat-form-field-infix { width: 30% !important; }
+
+#optionCardProcesses {
+  position: fixed;
+  margin: 0%;
+  left: 41.3%;
+  height: 66%;
+  width: 45%;
+  top: 15%;
+  background-color: #e6dde4;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  overflow: auto;
+}
+
+/*
+.paintingInfoRightSideTitle {
+  position: absolute;
+  left: 50%;
+  top: 17.6%;
+}
+
+.paintingInfoRightSideInsert {
+  position: absolute;
+  left: 65.15%;
+  top: 16.7%;
+  width: 12%;
+}
+*/
+
+th#processesTable {
+  width: 25%;
+}

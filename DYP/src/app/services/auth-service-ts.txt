@@ -1,0 +1,87 @@
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { auth } from 'firebase';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { UserInfo } from '../Interfaces/user-info';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+
+  user: Observable<UserInfo>;
+
+  constructor(
+    private afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private router: Router,
+  ) {
+    //// Get auth data, then get firestore user document || null
+    this.user = this.afAuth.authState.pipe(
+      switchMap(user => {
+        if (user) {
+          return this.afs.doc<UserInfo>(`users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
+      })
+    );
+  }
+
+  // Sets user data to firestore on login/signup
+  private updateUserData(user) {
+    const userRef = this.afs.collection('users').doc(user.uid);
+    // tslint:disable-next-line:max-line-length
+    const data: { area: any; uid: any; country: any; photoURL: any; address: any; city: any; phone: any; displayName: any; name: any; postcode: any; email: any } = {
+      uid: user.uid,
+      name: user.name,
+      address: user.address,
+      postcode: user.postcode,
+      city: user.city,
+      phone: user.phone,
+      email: user.email,
+      area: user.area,
+      country: user.country,
+      displayName: user.displayName,
+      photoURL: user.photoURL
+    };
+    return userRef.set(data, { merge: true });
+  }
+
+  // login an existing user with email/password, not used right now
+  emailLogin(email: string, password: string) {
+    return this.afAuth.auth
+      .signInWithEmailAndPassword(email, password)
+      .then(credential => {
+        console.log('Login successfully!');
+        return this.updateUserData(credential.user);
+      })
+      .catch(error => this.handleError(error));
+  }
+
+  // Sends email allowing user to reset password, not in use right now
+  resetPassword(email: string) {
+    const fbAuth = auth();
+    return fbAuth
+      .sendPasswordResetEmail(email)
+      .then(() => console.error('Password update email sent'))
+      .catch(error => this.handleError(error));
+  }
+
+  // logout a user, this is used now
+  signOut() {
+    this.afAuth.auth.signOut().then(() => {
+      this.router.navigate(['/login']);
+    });
+  }
+
+  // If error, console log and notify user
+  private handleError(error: Error) {
+    console.error(error);
+    alert(error.message);
+  }
+}

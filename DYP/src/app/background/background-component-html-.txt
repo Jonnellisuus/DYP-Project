@@ -1,0 +1,4 @@
+<div class="background">
+<img src="https://firebasestorage.googleapis.com/v0/b/tvdyppi.appspot.com/o/world-map-146505.svg?alt=media&token=359e9ee9-009a-4b88-9a2c-ee2c4c0a6569" alt="Map">
+</div>
+

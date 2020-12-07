@@ -1,0 +1,77 @@
+<h2 mat-dialog-title>User agreement</h2>
+
+<mat-dialog-content>
+<mat-dialog-content>
+  Copyright DYP International Oy. All rights reserved.
+</mat-dialog-content>
+
+<br>
+
+<mat-dialog-content>
+  Permission to use this cloud based application, software and its documentation with an agreed fee, is hereby
+  granted, provided that the above copyright notice, this paragraph and the following seven paragraphs are fully
+  accepted by the user.
+</mat-dialog-content>
+
+<br>
+
+<mat-dialog-content>
+  THE USER SHALL HAVE NO RIGHT TO COPY, MODIFY OR DISTRIBUTE THIS CLOUD BASED APPLICATION, DOCUMENTATION OR SOFTWARE.
+  THE USER SHALL USE THE SOFTWARE ONLY IN THE CLOUD SERVICE PROVIDED BY DYP INTERNATIONAL OY.
+</mat-dialog-content>
+
+<br>
+
+<mat-dialog-content>
+  IN NO EVENT SHALL DYP INTERNATIONAL OY BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, INCIDENTAL
+  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+  STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS CLOUD BASED
+  APPLICATION, SOFTWARE AND ITS DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</mat-dialog-content>
+
+<br>
+
+<mat-dialog-content>
+  DYP INTERNATIONAL OY SPECIFICALLY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE CLOUD BASED APPLICATION,
+  SOFTWARE AND ACCOMPANYING DOCUMENTATION, IF ANY, PROVIDED HEREUNDER IS PROVIDED "AS IS".
+</mat-dialog-content>
+
+<br>
+
+<mat-dialog-content>
+  DYP INTERNATIONAL OY HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+</mat-dialog-content>
+
+<br>
+
+<mat-dialog-content>
+  DYP INTERNATIONAL HAS THE RIGHT TO MAKE CHANGES TO THIS CLOUD BASED APPLICATION, SOFTWARE AND DOCUMENTATION WITHOUT
+  ANY CONSENT FROM OR INFORMING THE USER.
+</mat-dialog-content>
+
+<br>
+
+<mat-dialog-content>
+  THE USER GIVES THE RIGHT TO DYP INTERNATIONAL OY TO COLLECT USER’S PERSONAL DATA, SUCH AS NAME, EMAIL ADDRESS,
+  ADDRESS, TELEPHONE, ETC. FOR LICENSE, INVOICING, COMMUNICATION AND ADMIN PURPOSES.
+</mat-dialog-content>
+
+<br>
+
+<mat-dialog-content>
+  THE USER GIVES THE RIGHT TO DYP INTERNATIONAL OY TO COLLECT ANONYMOUSLY ITS FILLED-IN MARKET DATA,
+  INCLUDING BUT NOT LIMITED TO HOURLY RATES AND MATERIAL COSTS AND UTILIZE IT FOR PROVIDING GENERAL MARKET DATA
+  WITH ANY LICENSEES.
+</mat-dialog-content>
+
+<br>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="userAgreementAcceptButton" mat-raised-button mat-dialog-close>Accept</button>
+  <button class="userAgreementDeclineButton" routerLink="login" (click)="logout()" mat-raised-button
+          mat-dialog-close>Decline</button>
+</mat-dialog-actions>

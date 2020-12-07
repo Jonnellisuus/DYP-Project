@@ -1,0 +1,35 @@
+import { Injectable } from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {first, map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {convertSnaps} from './db-utils';
+import {User} from '../model/user';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UsersService {
+
+  // database connection in service constructor
+  constructor(private db: AngularFirestore) {
+  }
+
+  loadAllUsers(): Observable<User[]> {
+    return this.db.collection(
+      'users',
+      ref => ref.orderBy('seqNo'))
+        .snapshotChanges()
+        .pipe(
+          map(snaps => convertSnaps<User>(snaps))
+        );
+  }
+  loadAllUserswithoutlive(): Observable<User[]> {
+    return this.db.collection(
+      'courses',
+      ref => ref.orderBy('seqNo'))
+      .snapshotChanges()
+      .pipe(
+        map(snaps => convertSnaps<User>(snaps)),
+        first());
+  }
+}

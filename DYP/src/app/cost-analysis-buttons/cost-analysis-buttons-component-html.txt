@@ -1,0 +1,13 @@
+<table style="width: 100%" class="button-position">
+  <tr>
+
+    <td><button mat-raised-button [routerLink]="['/costanalysis']" (click)="onClick">Part Details</button></td>
+
+    <td><button mat-raised-button [routerLink]="['/costanalysisprocesses']" (click)="onClick">Processes</button></td>
+
+    <td><button mat-raised-button [routerLink]="['/costanalysisothercosts']" (click)="onClick">Other Costs</button></td>
+
+    <td><button mat-raised-button [routerLink]="['/costanalysisoverview']" (click)="onClick">Overview</button></td>
+
+  </tr>
+</table>

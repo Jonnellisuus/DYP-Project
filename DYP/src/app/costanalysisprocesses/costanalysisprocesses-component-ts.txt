@@ -1,0 +1,29 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'costanalysisprocesses',
+  templateUrl: './costanalysisprocesses.component.html',
+  styleUrls: ['./costanalysisprocesses.component.css']
+})
+export class CostanalysisprocessesComponent implements OnInit {
+  punching: boolean;
+  laserCutting: boolean;
+  bending: boolean;
+  threading: boolean;
+  insertion: boolean;
+  deBurring: boolean;
+  manualWelding: boolean;
+  roboticWelding: boolean;
+  spotWelding: boolean;
+  grinding: boolean;
+  masking: boolean;
+  painting: boolean;
+  bending2: boolean;
+  fiberLaser: boolean;
+
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+}

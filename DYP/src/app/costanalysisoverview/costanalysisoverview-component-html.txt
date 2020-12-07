@@ -1,0 +1,904 @@
+<app-cost-analysis-buttons></app-cost-analysis-buttons>
+
+<mat-card class="overViewMatCard">
+  <div class="flex">
+
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Material Cost
+          </mat-panel-title>
+          <mat-panel-description class="costAmount">
+            Cost amount
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <table>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Part name">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Category">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Part number">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Version number">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Lot size">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Manufacturing region">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Raw material">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Material cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Material mark-up">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Length">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Width">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Thickness">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Approximate weight">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Gross weight">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Net weight">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Scrap %">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Holes">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Scrap rebate">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Surface area">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+        </table>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Process Cost
+          </mat-panel-title>
+          <mat-panel-description class="costAmount">
+            Cost amount
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <table id="overviewProcessesTable">
+          <tr>
+            <th>
+              Punching
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Laser-cutting
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Fiber-laser
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Bending
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Threading
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Insertion
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              De-burring
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Manual welding
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Robotic Welding
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Spot welding
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Grinding
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Masking
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              Painting
+            </th>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Process cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up time">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Set-up cost/h">
+                </mat-form-field>
+              </label>
+            </td>
+            <td>
+              <label>
+                <mat-form-field>
+                  <input matInput placeholder="Total cost">
+                </mat-form-field>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <th>
+              Material
+            </th>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Material">
+              </mat-form-field>
+            </label>
+          </tr>
+          <tr>
+            <td></td>
+            <th>
+              Width
+            </th>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Width in mm">
+              </mat-form-field>
+            </label>
+          </tr>
+          <tr>
+            <td></td>
+            <th>
+              Vertically
+            </th>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Vertical">
+              </mat-form-field>
+            </label>
+          </tr>
+          <tr>
+            <td></td>
+            <th>
+              Sides
+            </th>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Number of sides">
+              </mat-form-field>
+            </label>
+          </tr>
+        </table>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Other Cost
+          </mat-panel-title>
+          <mat-panel-description class="costAmount">
+            Cost amount
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <tr>
+          <th>
+            Plating
+          </th>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Material">
+              </mat-form-field>
+            </label>
+          </td>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Cost per square metre">
+              </mat-form-field>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Purchase part 1
+          </th>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Part name">
+              </mat-form-field>
+            </label>
+          </td>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Number of parts">
+              </mat-form-field>
+            </label>
+          </td>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Cost per part">
+              </mat-form-field>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Purchase part 2
+          </th>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Part name">
+              </mat-form-field>
+            </label>
+          </td>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Number of parts">
+              </mat-form-field>
+            </label>
+          </td>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Cost per part">
+              </mat-form-field>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Purchase part 3
+          </th>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Part name">
+              </mat-form-field>
+            </label>
+          </td>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Number of parts">
+              </mat-form-field>
+            </label>
+          </td>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Cost per part">
+              </mat-form-field>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Packaging
+          </th>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Packaging cost">
+              </mat-form-field>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Freight
+          </th>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Freight cost">
+              </mat-form-field>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Customs duty
+          </th>
+          <td>
+            <label>
+              <mat-form-field>
+                <input matInput placeholder="Customs duty %">
+              </mat-form-field>
+            </label>
+          </td>
+        </tr>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <mat-card class="sticky">
+    <h2>Total cost</h2>
+  </mat-card>
+
+  <button mat-raised-button [routerLink]="['/costanalysis']">Save</button>
+  <button class="overviewBackButton" mat-raised-button [routerLink]="['/costanalysisothercosts']">Back</button>
+  <button class="overviewCancelButton" mat-raised-button><mat-icon mat-list-icon>clear</mat-icon></button>
+
+</mat-card>

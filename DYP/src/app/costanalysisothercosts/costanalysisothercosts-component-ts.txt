@@ -1,0 +1,21 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-costanalysisothercosts',
+  templateUrl: './costanalysisothercosts.component.html',
+  styleUrls: ['./costanalysisothercosts.component.css']
+})
+export class CostanalysisothercostsComponent implements OnInit {
+  plating: boolean;
+  purchaseParts: boolean;
+  packing: boolean;
+  freight: boolean;
+  customDuties: boolean;
+  otherCosts: boolean;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

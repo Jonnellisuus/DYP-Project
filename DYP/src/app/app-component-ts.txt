@@ -1,0 +1,32 @@
+import {Component, OnInit} from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {AuthService} from './services/auth.service';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  isLoggedIn$: Observable<boolean>;
+  isLoggedOut$: Observable<boolean>;
+  userEmail$: Observable<string>;
+  ngOnInit() {
+    // just console log purposes
+    this.authService.user.subscribe(user => console.log('appcomponentista auth service: ', user));
+    // end of console log
+
+    this.isLoggedIn$ = this.authService.user.pipe(map(user => !!user));
+    this.isLoggedOut$ = this.isLoggedIn$.pipe(map(loggedIn => !loggedIn));
+    this.userEmail$ = this.authService.user.pipe(map(user => user ? user.name : null));
+  }
+  constructor(private authService: AuthService /*, private afAuth: AngularFireAuth*/) {
+  }
+
+  logout() {
+    // this.afAuth.auth.signOut();
+    this.authService.signOut();
+  }
+}

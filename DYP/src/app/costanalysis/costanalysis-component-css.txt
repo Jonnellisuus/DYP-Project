@@ -1,0 +1,63 @@
+.partDetailsCard {
+  top: 8%;
+  position: absolute;
+  left: 2%;
+  margin: 2%;
+  height: 80%;
+  width: 90%;
+  overflow: auto;
+}
+
+.partDetailsTitle {
+  font-weight: bold;
+}
+
+button {
+  position: fixed;
+  color: white;
+  background: #7E7E7E;
+  left: 90%;
+  top: 88%;
+  float: bottom;
+}
+
+.partDetailsCancelButton {
+  position: fixed;
+  background: #d90300;
+  left: 90%;
+  top: 15%;
+  float: top;
+}
+
+/deep/ mat-slide-toggle.mat-checked:not(.mat-disable) .mat-slide-toggle-bar {
+  background: #5091d7;
+}
+
+/deep/ mat-slide-toggle.mat-checked:not(.mat-disable) .mat-slide-toggle-thumb {
+  background: #D7D7D7;
+}
+
+.partDetailsTitle {
+  position: relative;
+  font-weight: bold;
+}
+
+.partDetailsInsert {
+  position: relative;
+}
+
+table {
+  width: 100%;
+}
+
+.dropdownQuotationEstimation {
+  position: absolute;
+  width: 19% !important;
+  top: 2%;
+}
+
+.partDetailsCurrencyInsert {
+  position: absolute;
+  width: 11.8% !important;
+  top: 2.5%;
+}

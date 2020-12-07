@@ -1,0 +1,317 @@
+<app-cost-analysis-buttons></app-cost-analysis-buttons>
+
+<mat-card class="partDetailsCard">
+  <table>
+    <tr>
+      <td>
+        <p class="partDetailsTitle">
+          Part name
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert part name">
+          </label>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-form-field class="dropdownQuotationEstimation">
+          <mat-label>Quotation / Estimation</mat-label>
+          <mat-select>
+            <mat-option value="quotation">Quotation</mat-option>
+            <mat-option value="estimation">Estimation</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsCurrencyInsert">
+          <label>
+            <input matInput placeholder="Currency">
+          </label>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p class="partDetailsTitle">
+          Part number
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert part number">
+          </label>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <p class="partDetailsTitle">
+          Length
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input [ngModel]="this.calculationsservice.length" matInput placeholder="Millimetres">
+          </label>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p class="partDetailsTitle">
+          Version number
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsertProductName">
+          <label>
+            <input matInput placeholder="Insert version number">
+          </label>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <p class="partDetailsTitle">
+          Width
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input  [ngModel]="this.calculationsservice.width" matInput placeholder="Millimetres">
+          </label>
+        </mat-form-field>
+      </td>
+
+    </tr>
+
+    <tr>
+      <td>
+        <p class="partDetailsTitle">
+          Category
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert category">
+          </label>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <p class="partDetailsTitle">
+          Thickness
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Millimetres">
+          </label>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p class="partDetailsTitle">
+          Manufacturing region
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert region">
+          </label>
+        </mat-form-field>
+      </td>
+      <td>
+        <p class="partDetailsTitle">
+          Approximate weight
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input [ngModel]="this.calculationsservice.weight" matInput placeholder="Kilograms">
+          </label>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p class="partDetailsTitle">
+          Lot size*
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert lot size">
+          </label>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <p class="partDetailsTitle">
+          Scrap %
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input [ngModel]="this.calculationsservice.scrapamount" matInput placeholder="Insert scrap %">
+          </label>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p class="partDetailsTitle">
+          Raw material*
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert raw material">
+          </label>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <p class="partDetailsTitle">
+          Scrap rebate
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert rebate value">
+          </label>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p class="partDetailsTitle">
+          Material cost*
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert cost">
+          </label>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <p class="partDetailsTitle">
+          Gross weight
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input [(ngModel)]="field" type="text" value="{{this.calculationsservice.calculateArea()}}" matInput placeholder="Insert gross weight">
+            <!-- weight * (1 + scrap %) -->
+          </label>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+
+      <td>
+        <p class="partDetailsTitle">
+          Material mark-up
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert material mark-up">
+          </label>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <p class="partDetailsTitle">
+          Net weight
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert net weight">
+          </label>
+        </mat-form-field>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <p class="partDetailsTitle">
+          Holes
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input matInput placeholder="Insert surface area">
+          </label>
+        </mat-form-field>
+      </td>
+
+      <td>
+        <p class="partDetailsTitle">
+          Area of a side
+        </p>
+      </td>
+
+      <td>
+        <mat-form-field class="partDetailsInsert">
+          <label>
+            <input [(ngModel)]="field" type="text" value="{{this.calculationsservice.calculateArea()}}" matInput placeholder="Insert area of a side">
+            <!-- length x width / 1000^2 -->
+          </label>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <button mat-raised-button [routerLink]="['/costanalysisprocesses']">Next</button>
+  <button class="partDetailsCancelButton" mat-raised-button><mat-icon mat-list-icon>clear</mat-icon></button>
+
+</mat-card>

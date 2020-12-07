@@ -1,0 +1,90 @@
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {CostanalysisComponent} from './costanalysis/costanalysis.component';
+import {PartsComponent} from './parts/parts.component';
+import {ProductsComponent} from './products/products.component';
+import {ReportsComponent} from './reports/reports.component';
+import {RfqComponent} from './rfq/rfq.component';
+import {AdminComponent} from './admin/admin.component';
+import {LoginComponent} from './login/login.component';
+import {HomeComponent} from './home/home.component';
+import {CostanalysisprocessesComponent} from './costanalysisprocesses/costanalysisprocesses.component';
+import {CostanalysisothercostsComponent} from './costanalysisothercosts/costanalysisothercosts.component';
+import {CostanalysisoverviewComponent} from './costanalysisoverview/costanalysisoverview.component';
+import {AuthGuard} from './guard/guard.guard';
+import {UseragreementComponent} from './useragreement/useragreement.component';
+
+
+const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'costanalysis',
+    component: CostanalysisComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'costanalysisprocesses',
+    component: CostanalysisprocessesComponent
+  },
+  {
+    path: 'costanalysisothercosts',
+    component: CostanalysisothercostsComponent
+  },
+  {
+    path: 'costanalysisoverview',
+    component: CostanalysisoverviewComponent
+  },
+  {
+    path: 'parts',
+    component: PartsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'products',
+    component: ProductsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'reports',
+    component: ReportsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'rfq',
+    component: RfqComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'useragreement',
+    component: UseragreementComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '',
+    component: LoginComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/'
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {
+}

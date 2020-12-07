@@ -1,0 +1,70 @@
+<mat-drawer-container class="app-sidenav-container">
+  <mat-drawer mode="side" opened class="app-sidenav" *ngIf="isLoggedIn$ | async">
+
+    <div>
+      <div fxLayout="column" fxLayoutAlign="center center" class="app-sidenav-user-area">
+      </div>
+
+      <div class="app-user-name">
+        <div>
+          <span>
+            {{userEmail$ | async}}
+          </span>
+        </div>
+      </div>
+
+      <div></div>
+
+      <mat-divider></mat-divider>
+
+      <mat-nav-list>
+        <mat-list-item routerLink="costanalysis">
+          <mat-icon mat-list-icon>monetization_on</mat-icon>
+          <span>Cost Analysis</span>
+        </mat-list-item>
+
+        <mat-list-item routerLink="parts">
+          <mat-icon mat-list-icon>settings</mat-icon>
+          <span>Parts</span>
+        </mat-list-item>
+
+      <mat-list-item class="iconProducts"> <!--routerLink="products">--> <!-- Disabled unnecessary navigation.-->
+        <mat-icon mat-list-icon>receipt</mat-icon>
+        <span>Products</span>
+      </mat-list-item>
+
+      <mat-list-item class="iconReports"> <!--routerLink="reports">--> <!-- Disabled unnecessary navigation.-->
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <span>Reports</span>
+      </mat-list-item>
+
+      <mat-list-item class="iconRFQ"> <!--routerLink="rfq">--> <!-- Disabled unnecessary navigation.-->
+        <mat-icon mat-list-icon>description</mat-icon>
+        <span>RFQ</span>
+      </mat-list-item>
+
+      <mat-list-item routerLink="admin">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <span>Admin</span>
+      </mat-list-item>
+        <a mat-list-item routerLink="login" *ngIf="isLoggedOut$ | async">
+          <mat-icon>account_circle</mat-icon>
+          <span>Login</span>
+        </a>
+
+        <a mat-list-item routerLink="login" (click)="logout()" *ngIf="isLoggedIn$ | async">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </a>
+      </mat-nav-list>
+
+    </div>
+
+    <div>
+      <img src="https://firebasestorage.googleapis.com/v0/b/tvdyppi.appspot.com/o/dyp-logo.jpeg?alt=media&token=6ab3c4ef-9935-4561-ad8d-2585174f1dfa" alt="Map">
+    </div>
+
+  </mat-drawer>
+  <app-toolbar></app-toolbar>
+  <router-outlet></router-outlet>
+</mat-drawer-container>
